@@ -88,13 +88,16 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);display:flex
 .ct .n{background:rgba(255,255,255,.25);font-size:10px;padding:1px 6px;border-radius:20px;font-weight:800;}
 .ct[data-c="Todos"].active{background:var(--accent);}
 .ct[data-c="Secos"].active{background:var(--yellow);}
-.ct[data-c="Liquidos"].active{background:var(--teal);}
-.ct[data-c="Bebidas"].active{background:var(--purple);}
+.ct[data-c="Refrigerante"].active{background:var(--purple);}
+.ct[data-c="Molhos"].active{background:var(--teal);}
 .ct[data-c="Carnes"].active{background:var(--red);}
 .ct[data-c="Vegetais"].active{background:var(--green);}
 .ct[data-c="Laticinios"].active{background:var(--orange);}
 .ct[data-c="Limpeza"].active{background:var(--sky);}
 .ct[data-c="Embalagens"].active{background:var(--violet);}
+.ct[data-c="Sobremesa"].active{background:#ec4899;}
+.ct[data-c="Temperos"].active{background:#84cc16;}
+.ct[data-c="Agua"].active{background:#0ea5e9;}
 .pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:13px;}
 .pc{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:17px;transition:all .2s;box-shadow:var(--sh);}
 .pc:hover{transform:translateY(-2px);box-shadow:var(--sh2);border-color:var(--accent);}
@@ -121,8 +124,8 @@ tbody tr:last-child{border-bottom:none;}
 tbody td{padding:13px 16px;vertical-align:middle;}
 .badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:700;}
 .ci-Secos{background:var(--yellow-l);}
-.ci-Liquidos{background:var(--teal-l);}
-.ci-Bebidas{background:var(--purple-l);}
+.ci-Refrigerante{background:var(--purple-l);}
+.ci-Molhos{background:var(--teal-l);}
 .ci-Carnes{background:var(--red-l);}
 .ci-Vegetais{background:var(--green-l);}
 .ci-Laticinios{background:var(--orange-l);}
@@ -132,8 +135,8 @@ tbody td{padding:13px 16px;vertical-align:middle;}
 .ci-Temperos{background:#f7fee7;}
 .ci-Agua{background:#f0f9ff;}
 .tag-Secos{color:var(--yellow);background:var(--yellow-l);}
-.tag-Liquidos{color:var(--teal);background:var(--teal-l);}
-.tag-Bebidas{color:var(--purple);background:var(--purple-l);}
+.tag-Refrigerante{color:var(--purple);background:var(--purple-l);}
+.tag-Molhos{color:var(--teal);background:var(--teal-l);}
 .tag-Carnes{color:var(--red);background:var(--red-l);}
 .tag-Vegetais{color:var(--green);background:var(--green-l);}
 .tag-Laticinios{color:var(--orange);background:var(--orange-l);}
@@ -143,8 +146,8 @@ tbody td{padding:13px 16px;vertical-align:middle;}
 .tag-Temperos{color:#84cc16;background:#f7fee7;}
 .tag-Agua{color:#0ea5e9;background:#f0f9ff;}
 .bar-Secos{background:var(--yellow);}
-.bar-Liquidos{background:var(--teal);}
-.bar-Bebidas{background:var(--purple);}
+.bar-Refrigerante{background:var(--purple);}
+.bar-Molhos{background:var(--teal);}
 .bar-Carnes{background:var(--red);}
 .bar-Vegetais{background:var(--green);}
 .bar-Laticinios{background:var(--orange);}
@@ -754,9 +757,9 @@ input,select,textarea{font-family:var(--font);}
 
 <!-- ══════════════════ JAVASCRIPT ══════════════════ -->
 <script>
-var ICONS = {Secos:'🌾',Liquidos:'🫙',Bebidas:'🥤',Carnes:'🥩',Vegetais:'🥦',Laticinios:'🧀',Limpeza:'🧹',Embalagens:'📦'};
-var CATS  = ['Todos','Secos','Liquidos','Bebidas','Carnes','Vegetais','Laticinios','Limpeza','Embalagens'];
-var CLBLS = {Todos:'Todos',Secos:'Secos',Liquidos:'Líquidos',Bebidas:'Bebidas',Carnes:'Carnes',Vegetais:'Vegetais',Laticinios:'Laticínios',Limpeza:'Limpeza',Embalagens:'Embalagens e Doces'};
+var ICONS = {Secos:'🌾',Refrigerante:'🥤',Molhos:'🫙',Carnes:'🥩',Vegetais:'🥦',Laticinios:'🧀',Limpeza:'🧹',Embalagens:'📦',Sobremesa:'🍮',Temperos:'🧂',Agua:'💧'};
+var CATS  = ['Todos','Secos','Refrigerante','Molhos','Carnes','Vegetais','Laticinios','Limpeza','Embalagens','Sobremesa','Temperos','Agua'];
+var CLBLS = {Todos:'Todos',Secos:'Secos',Refrigerante:'Refrigerante',Molhos:'Molhos e Líquidos',Carnes:'Carne e Proteína',Vegetais:'Vegetais e Legumes',Laticinios:'Laticínios',Limpeza:'Produto de Limpeza',Embalagens:'Embalagem',Sobremesa:'Sobremesa',Temperos:'Temperos',Agua:'Água e Sucos'};
 
 var db  = {produtos:[],consumo:[],fornecedores:[],faturas:[],despFixas:[]};
 var fsdb = null;
